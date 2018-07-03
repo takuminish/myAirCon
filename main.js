@@ -2,6 +2,7 @@
 
 const electron = require("electron");
 const app = electron.app;
+const Menu = electron.Menu;
 const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
@@ -22,6 +23,19 @@ app.on('ready', function() {
   mainWindow.on('closed', function() {
     mainWindow = null;
   });
-
-  mainWindow.webContents.openDevTools();
+  // メニューをカスタマイズ
+  initWindowMenu();
 });
+
+function initWindowMenu(){
+  const template = [
+    {
+      label: 'Developer',
+      click () { mainWindow.webContents.openDevTools();}
+    }
+  ]
+
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
+
+}
