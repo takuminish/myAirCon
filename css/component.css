@@ -1,0 +1,31 @@
+html {
+    overflow: hidden;
+}
+
+
+.on_off_button , .temperature_button {
+    margin-bottom: 24px;
+    width:600px;
+    margin-right: auto;
+    margin-left : auto;
+}
+
+#cool_button {
+    width: 33%;
+}
+
+#hot_button {
+    width: 32%;
+}
+
+#off_button {
+    width: 33%;
+}
+
+#temp_up_button {
+    width: 49%;
+}
+
+#temp_down_button {
+    width: 49%;
+}
