@@ -18,7 +18,6 @@ app.on('ready', function() {
   // メイン画面の表示。ウィンドウの幅、高さを指定できる
   mainWindow = new BrowserWindow({width: 600, height: 600, resizable: false});
   mainWindow.loadURL('file://' + __dirname + '/index.html');
-
   // ウィンドウが閉じられたらアプリも終了
   mainWindow.on('closed', function() {
     mainWindow = null;
