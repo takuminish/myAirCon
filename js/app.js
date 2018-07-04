@@ -27,16 +27,17 @@ window.onload = function() {
         var url = process.env.OFF;
         post_data(url, xhr); 
     };
-/*
+
     setInterval( function() {
-        data.post_code = "temp_check"
-        post_data(data);
+        var url = process.env.ROOM;
+        post_data(url, xhr); 
     },5000);
 
     setInterval( function() {
- 
+        var url = process.env.AIRCON;
+        post_data(url, xhr); 
     },7000);
-    */
+    
 }
 
 function post_data(url, xhr) {
