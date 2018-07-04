@@ -1,33 +1,31 @@
 require('dotenv').config(); 
 
 window.onload = function() {
-    var post_code = "off";
-    var url = process.env.URL;
     var xhr = new XMLHttpRequest();
 
     document.getElementById("cool_button").onclick = function() {
-        post_code = "c";
-        post_data(url, xhr, post_code);   
+        var url = process.env.COOL;
+        post_data(url, xhr);   
     };
 
     document.getElementById("hot_button").onclick = function() {
-        post_code = "ruby";
-        post_data(url, xhr, post_code);  
+        var url = process.env.HOT;
+        post_data(url, xhr);  
     };
 
     document.getElementById("off_button").onclick = function() {
-        post_code = "php";
-        post_data(url, xhr, post_code); 
+        var url = process.env.OFF;
+        post_data(url, xhr); 
     };
 
     document.getElementById("temp_up_button").onclick = function() {
-        post_code = "javascript";
-        post_data(url, xhr, post_code); 
+        var url = process.env.UP;
+        post_data(url, xhr); 
     };
 
     document.getElementById("temp_down_button").onclick = function() {
-        post_code = "python";
-        post_data(url, xhr, post_code); 
+        var url = process.env.OFF;
+        post_data(url, xhr); 
     };
 /*
     setInterval( function() {
@@ -41,8 +39,7 @@ window.onload = function() {
     */
 }
 
-function post_data(url, xhr, data) {
-    url = url + "q=" + data;
+function post_data(url, xhr) {
     alert(url);
     xhr.open('GET', url);
     xhr.send();
