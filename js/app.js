@@ -27,7 +27,7 @@ window.onload = function() {
         var url = process.env.OFF;
         post_data(url, xhr); 
     };
-
+/*
     setInterval( function() {
         var url = process.env.ROOM;
         post_data(url, xhr); 
@@ -37,12 +37,14 @@ window.onload = function() {
         var url = process.env.AIRCON;
         post_data(url, xhr); 
     },7000);
-    
+  */  
 }
 
 function post_data(url, xhr) {
     alert(url);
     xhr.open('GET', url);
+    xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+    xhr.setRequestHeader("X-Requested-With",process.env.X);
     xhr.send();
  
     xhr.onreadystatechange = function() {
@@ -51,3 +53,4 @@ function post_data(url, xhr) {
          }
     }
 } 
+
