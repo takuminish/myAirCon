@@ -2,6 +2,7 @@ require('dotenv').config();
 
 window.onload = function() {
     var xhr = new XMLHttpRequest();
+    var desicion_temp = 20;
 
     document.getElementById("cool_button").onclick = function() {
         var url = process.env.COOL;
@@ -19,13 +20,15 @@ window.onload = function() {
     };
 
     document.getElementById("temp_up_button").onclick = function() {
-        var url = process.env.UP;
-        post_data(url, xhr); 
+        desicion_temp++;
+        desicion_temp = desicion_temp_check (desicion_temp);
+        document.getElementById("desicion_temp").textContent = "変更後の設定温度は" + desicion_temp + "度です。"
     };
 
     document.getElementById("temp_down_button").onclick = function() {
-        var url = process.env.OFF;
-        post_data(url, xhr); 
+        desicion_temp--;
+        desicion_temp = desicion_temp_check (desicion_temp);
+        document.getElementById("desicion_temp").textContent = "変更後の設定温度は" + desicion_temp + "度です。"
     };
 /*
     setInterval( function() {
@@ -41,7 +44,6 @@ window.onload = function() {
 }
 
 function post_data(url, xhr) {
-    alert(url);
     xhr.open('GET', url);
     xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
     xhr.setRequestHeader("X-Requested-With",process.env.X);
@@ -53,4 +55,15 @@ function post_data(url, xhr) {
          }
     }
 } 
+
+function desicion_temp_check (temp) {
+
+  if (temp < 16) {
+      return 16;
+  } else if(temp > 30) {
+      return 30;
+  }
+  return temp;
+
+}
 

@@ -3,29 +3,28 @@ html {
 }
 
 
-.on_off_button , .temperature_button {
-    margin-bottom: 24px;
+.on_button, .off_button {
+    margin-bottom: 10px;
     width:600px;
     margin-right: auto;
     margin-left : auto;
 }
 
-#cool_button {
-    width: 33%;
+.temperature_button {
+    width:600px;
 }
 
-#hot_button {
-    width: 32%;
+
+#cool_button, #hot_button {
+    width: 49%;
 }
 
 #off_button {
-    width: 33%;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-#temp_up_button {
-    width: 49%;
-}
-
-#temp_down_button {
-    width: 49%;
+#temp_up_button, #temp_down_button , #temp_desicion_button{
+    margin-bottom: 10px;
+    width: 32%
 }
